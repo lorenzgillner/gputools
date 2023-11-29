@@ -4,5 +4,5 @@ if [[ -z "$DISPLAY" ]]; then
 else
     GNUPLOT_TERMINAL="wxt"
 fi
-python3 util/wattmon.py "$@" | tee wattmon.log | gnuplot -p -e "set terminal $GNUPLOT_TERMINAL; set nokey; plot '-' using 2 w l"
+python3 wattmon.py "$@" | tee wattmon.log | gnuplot -p -e "set terminal $GNUPLOT_TERMINAL; set nokey; plot '-' using 2 w l"
 
