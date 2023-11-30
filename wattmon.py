@@ -74,7 +74,7 @@ async def main():
     stdout, stderr = await proc.communicate()
 
     # show errors if there were any
-    if not proc.returncode:
+    if proc.returncode > 0:
         print(stderr, file=sys.stderr)
 
     # add some more padding
